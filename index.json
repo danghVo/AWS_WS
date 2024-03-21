@@ -1,0 +1,169 @@
+[
+{
+	"uri": "//localhost:1313/5-creates3host/5.1-createbucket/",
+	"title": "Create S3 Bucket",
+	"tags": [],
+	"description": "",
+	"content": "Create S3 Bucket In AWS Mangement Console: Search S3 Choose S3 services Choose Buckets, click on Create bucket: Config General configuration: Choose AWS Region: Asia Pacific (Singapore) ap-southeast-1 Enter Bucket name: www.tasktrackr.com Object Ownership, choose ACLs enabled Uncheck Block all public access Click on Create bucket "
+},
+{
+	"uri": "//localhost:1313/3-createddbcluster/3.1-createsecuritygroup/",
+	"title": "Create Security Group",
+	"tags": [],
+	"description": "",
+	"content": "Create Security Group In AWS Management Console Searching for Security groups Choose Security groups Click on Create security group\nEnter configuration:\nName: DDB-SG Description: Allow webserver connect DB Choose VPC: My VPC Edit Inbound Rules: Custom TCP: Port: 27017 Source: Choose Custom - choose id of EC2 Private SG Click on Create security group "
+},
+{
+	"uri": "//localhost:1313/4-createec2server/4.1-createsg/",
+	"title": "Create Security Group",
+	"tags": [],
+	"description": "",
+	"content": "Create Security Group For Back-end Server In the Ec2 interface: Choose Security Groups Click on Create security group Configure Basic details: Security group name: Ec2 Private SG Desciption: SG for back-end server Choose VPC: My VPC Edit Inbound Route: HTTP: Source: Anywhere HTTPS: Source: Anywhere Custom TCP: Port: 27017 Source: Anywhere Custom TCP: Port: 5000 Source: Anywhere All ICMP - IPv4: Source: Anywhere SSH: Source: My IP Select Create security group "
+},
+{
+	"uri": "//localhost:1313/2-preparation/2.1-createvpc/",
+	"title": "Create VPC",
+	"tags": [],
+	"description": "",
+	"content": "CREATE VPC Create VPC First, we will create a VPC Access AWS Management Console Find VPC Select VPC In the VPC interface: Select Yours VPC Select Create VPC Follow these steps to create VPC: Choose Resource and select VPC only Enter Name tag as My VPC Set IPv4 CIDR to 10.10.0.0/16 ::: warning Important Note For the Tenancy configuration, it\u0026rsquo;s recommended to keep the default setting. Switching to Dedicated may restrict the creation of certain EC2 Instance types within the VPC, as they require the default tenancy. :::\nClick on Create VPC Complete the process of creating the VPC "
+},
+{
+	"uri": "//localhost:1313/",
+	"title": "Hosting a web application with S3, DocumentDB",
+	"tags": [],
+	"description": "",
+	"content": "HOSTING A WEB APPLICATION WITH S3 AND DOCUMENT DB Overview In this lab, you will explore how to hosting a web application using AWS Simple Storage Service (S3) as a front-end server and AWS Document DB as a back-end server\nContent Introduction Preparation Creating a DDB Cluster Creating an Ec2 Server Creating S3 Hosting Website Resource Cleanup "
+},
+{
+	"uri": "//localhost:1313/1-introduce/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Amazon Simple Store Service (S3) Amazon S3 (Simple Storage Service) provides a reliable and cost-effective solution for hosting static websites. Unlike dynamic websites that rely on server-side processing (such as PHP, JSP, or ASP.NET), static websites consist of individual webpages with fixed content and minimal client-side scripts.\nAmazon Document DB Amazon DocumentDB (with MongoDB compatibility) is a fully managed native JSON document database that makes it easy and cost effective to operate critical document workloads at virtually any scale without managing infrastructure. Amazon DocumentDB simplifies your architecture by providing built-in security best practices, continuous backups, and native integrations with other AWS services. You can enhance your applications with generative artificial intelligence (AI) and machine learning (ML) capabilities using vector search for Amazon DocumentDB and integration with Amazon SageMaker Canvas.\n"
+},
+{
+	"uri": "//localhost:1313/4-createec2server/4.2-createinstance/",
+	"title": "Create Ec2 Instance",
+	"tags": [],
+	"description": "",
+	"content": "Create EC2 Instances in Subnets Access the AWS Management Console: Enter EC2 Choose EC2 In the EC2 interface: Select Instances Click on Launch Instances Enter name Back-end Server 1 Choose the AMI: Select Quick Start Choose Amazon Linux Select AMI: Amazon Linux 2 Choose Instance type and Key pair: Select t2.micro Create or choose existing key pair Configure the Network: Select the VPC: My VPC Choose the Subnet: Private Subnet 1 For Firewall (Security Group), select Select existing security group Choose Ec2 Private SG Click on Create Subnet Wait for about 5 minutes until the Instance state show Running "
+},
+{
+	"uri": "//localhost:1313/2-preparation/2.2-createig/",
+	"title": "Create Internet Gateway",
+	"tags": [],
+	"description": "",
+	"content": "Internet Gateway Create an Internet Gatewaay In the VPC interface: Select Internet Gateways Click on Create internet gateway Configure the internet gateway: Enter My IG Click Create internet gateway Attach IG to VPC: Choose My IG have just created Click on Actions Choose Attach to VPC In Attach VPC interface: Select My VPC Click on Attach internet gateway "
+},
+{
+	"uri": "//localhost:1313/3-createddbcluster/3.2-createsubnetgroup/",
+	"title": "Create Subnet Group",
+	"tags": [],
+	"description": "",
+	"content": "Create Subnet Group Access the AWS Management Console: Navigate to DocumentDB Click on Instances In the Document DB interface: Select Subnet groups Choose Create Enter Subnet Group configuration: Name: DB group Description: A group serve for DocumentDB Choose VPC: id of My VPC Choose AZ: AZ ap-southeast-1a: id of Subnet Private Subnet 3 AZ ap-southeast-1b: id of Subnet Private Subnet 4 Click on Create\nCheck for Status: Complete\n"
+},
+{
+	"uri": "//localhost:1313/5-creates3host/5.2-hostwebsite/",
+	"title": "Host S3 Static Website",
+	"tags": [],
+	"description": "",
+	"content": "Hosting A S3 Static Website Your are required having Node installed in your local computer Node VScode\nOpen VScode in your local computer\nPress Ctrl + `\nClone git front-end repository Link git clone https://github.com/danghVo/TaskTrackr_frontend\nOpen tasktrackr_frontend have just cloned\nRun npm udpate\nOpen .env, paste DNS of Load balencer created before\nRun npm run build\nDrag and drop file from tasktracker_frontend/dist directory to S3 Choose all file have just dropped: Click on Actions Choose Make public using ACL Click on Make public In www.tasktrackr.com bucket interface: Click on Properties Scroll down to Static website hosting Click on Edit Config Static website: Check Enable Index document: enter index.html Click on Save changes Click on Link S3: Click Dang ky Enter huynhvovl - Cayhuong123 - Cayhuong123 Click Dang nhap: use huynhvovl - Cayhuong123 to sign in Try create date and todolist in that date. "
+},
+{
+	"uri": "//localhost:1313/2-preparation/",
+	"title": "Preparation",
+	"tags": [],
+	"description": "",
+	"content": "Preparation In this step, we will make some preparations: - Create VPC - Create Subnets - Create Internet Gateway - Create NAT gateway - Create Route Table\nContent Create VPC Create Subnets Create Internet Gateway Create NAT Gateway Create Route Table "
+},
+{
+	"uri": "//localhost:1313/3-createddbcluster/3.3-createcluster/",
+	"title": "Create Document DB Cluster",
+	"tags": [],
+	"description": "",
+	"content": "Create DocumentDB Cluster In Document DB interface: Choose Cluster Click on Create Configure Cluster: Choose Cluster type: Instance Based Cluster Enter identifier: docdb-tasktrackr Choose Instance class: db.t3.medium Choose: Cluster store configuration: **Amazon DocumentDB I/O-Optimized Connectivity: Don\u0026rsquo;t connect to an EC2 compute source Authentication: Enter Username Enter Password Enter Confirm password Click on Show advanced settings Config Netword settings: Choose VPC: My VPC Choose Subnet group: db group VPC Security groups: Choose DDB - SG Click on Create\nWait for about 5 minutes for creation complete\nWhen creation complete, click on docdb-tasktrackr. Scroll down and copy connect uri: "
+},
+{
+	"uri": "//localhost:1313/3-createddbcluster/",
+	"title": "Create DocumentDB Cluster",
+	"tags": [],
+	"description": "",
+	"content": "Create DocumentDB Cluster In this step, we will DocumentDB Cluster\nContent Creata Security Group Create Subnet Group Creata DocumentDB Cluster "
+},
+{
+	"uri": "//localhost:1313/4-createec2server/4.3-createeic/",
+	"title": "Create Ec2 instance connection",
+	"tags": [],
+	"description": "",
+	"content": "Create EC2 Instance Connection Endpoint Create Security Group In AWS Management Console: Find VPC Select VPC In the VPC interface: Choose Security Groups Click on Create security group Configure Basic details: Security group name: EIC Enpoint Desciption: Allow To Connect Back-end Server Choose VPC: My VPC Config Inbound Route: SSH: Port: 22 Source: My IP Click Create security group Create EC2 Connection Endpoint Create EC2 Instance Connection Endpoint: Choose Endpoints Click on Create endpoint Enter Endpoint settings: Name: EIC Choose Service category: EC2 Instance Connect Endpoint Choose VPC: My VPC Choose Security group: EIC Endpoint Choose Subnet: Private Subnet 1 Open EC2 interface: Choose Instance Choose Backend Server 1 Click on Connect On EC2 Instance Connect: Choose Connect using EC2 Instance Connect Endpoint Choose EICE just created Click on Connect On CLI try to ping to google: *ping google.com "
+},
+{
+	"uri": "//localhost:1313/2-preparation/2.3-createsubnet/",
+	"title": "Create Subnet",
+	"tags": [],
+	"description": "",
+	"content": "Subnet Create Subnet In the VPC interface: Select Subnets Select Create subnet Enter Subnet Setting to create subnet: Subnet name: Enter Public Subnet 1 Select AZ: ap-southeast-1a IPv4 CIDR block: Enter 10.10.1.0/24 Select Create Subnet Follow the same step to create more subnets: Public Subnet 2 with IPv4 is 10.10.2.0/24 Private Subnet 1 with IPv4 is 10.10.3.0/24 Private Subnet 2 with IPv4 is 10.10.4.0/24 Private Subnet 3 with IPv4 is 10.10.5.0/24 Private Subnet 4 with IPv4 is 10.10.6.0/24 "
+},
+{
+	"uri": "//localhost:1313/4-createec2server/",
+	"title": "Create Ec2 Server",
+	"tags": [],
+	"description": "",
+	"content": "Create Ec2 Server In this step, we will EC2 instance as a Backend Server.\nContent Create Secutiry Group Create Subnet Create Ec2 Instance Connection "
+},
+{
+	"uri": "//localhost:1313/2-preparation/2.4-createnat/",
+	"title": "Create NAT Gateway",
+	"tags": [],
+	"description": "",
+	"content": "NAT Gateway Create NAT Gateway In the VPC interface: Select NAT gateways Click on Create NAT gateway Enter NAT Setting to create NAT: NAME: Nat 1 Subnet: Choose Public Subnet 1 Click on Allocate Elastic IP Click on Create NAT gateway Follow the same step to create one more NAT for AZ b: NAME: Nat 2 Subnet: Choose Public Subnet 2 Click on Allocate Elastic IP Click on Create NAT gateway "
+},
+{
+	"uri": "//localhost:1313/4-createec2server/4.4-startserver/",
+	"title": "Start Back-end Server",
+	"tags": [],
+	"description": "",
+	"content": "Start Back-end Server In Ec2 CLI, run command: sudo amazon-linux-extras install docker\nAfter creation complete, checking version of Docker: docker --version\nInstall git: sudo yum install git\nCreate folder tasktrackr: mkdir tasktrackr \u0026amp; cd ./tasktrakr\nClone back-end repository: git clone https://github.com/danghVo/TaskTrackr_Backend\nGo to config file: cd ./app/config/index.js\nEdit config file: nano ./index.js\nEdit config file: app: port: 5000 db: uri is uri we copied before from DocumentDB Cluster Press Ctrl + X -\u0026gt; Y\nDownload global-bundle.pem file. Run command: wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem\nBack to tacktrackr root: cd ../../\nBuild Docker image: sudo docker build -t tasktrackr_server\nAfter built complete, checking docker image have just created: sudo docker image ls\nRun container: sudo docker run -p 5000:5000 tasktrackr_server "
+},
+{
+	"uri": "//localhost:1313/4-createec2server/4.5-createloadbalencer/",
+	"title": "Create Application Load Balencer",
+	"tags": [],
+	"description": "",
+	"content": "Create Application Load Balencer Create Target Group In Ec2 interface: Choose Target Groups Click on Create target group Choose Target type: Instacnes Configure Target groups: Name: LBGroup Port: 5000 Choose VPC: My VPC Click on Next Choose Available instances: Choose 2 Instances: Back-end Server 1 \u0026amp; 2 Enter port 5000 Click Include as pending below Click on Create Create Applicaiotn Load Balencer In Ec2 interface: Choose Load Balencer Click on Create load balencer Choose Application Load Balencer, click Create Config Basic Configuration Name: LB Network mapping: Choose VPC: My VPC Check AZ a \u0026amp; b: Public Subnet 1 \u0026amp; 2 Security groups: Choose Ec2 private SG\nListeners and routing: Choose LBGroup target group\nClick on Create load balencer\n"
+},
+{
+	"uri": "//localhost:1313/2-preparation/2.5-createroutetable/",
+	"title": "Create Route Table",
+	"tags": [],
+	"description": "",
+	"content": "Route Table Create Public Route In the VPC interface: Select Route Tables Click on Create route table Configure the Public Route Table: Enter Name: Public Route Choose VPC: My VPC Click on Create route table Edit Public Route: Choose Public Route Click on Actions Choose Edit route Add route to Internet: Enter 0.0.0.0/0 Choose Internet Gateway Choose IGW we created before Click on Save changes On Public Route interface: Choose Subnet associations Click on Edit subnet associations Add Public Subnet: Choose Public Subnet 1 \u0026amp; 2 Click on Save associations Create Private Route In the VPC interface: Select Route Tables Click on Create route table Configure the Private Route Table: Enter Name: Private Route 1 Choose VPC: My VPC Click on Create route table Edit Private Route 1: Choose Private Route Click on Actions Choose Edit route Add route to Internet: Enter 0.0.0.0/0 Choose NAT Gateway Choose id of NAT 1 we created before Click on Save changes On Private Route 1 interface: Choose Subnet associations Click on Edit subnet associations Add Public Subnet: Choose Private Subnet 1 \u0026amp; 3 Click on Save associations Follow the same step to create Private Route 2 with: NAT: NAT 2 Assign to Subnet: Private Subnet 2 \u0026amp; 4 "
+},
+{
+	"uri": "//localhost:1313/5-creates3host/",
+	"title": "Hosting S3 Static Website",
+	"tags": [],
+	"description": "",
+	"content": "In this guide, we will hosting a website in S3.\nContent: Create Bucket Hosting Website "
+},
+{
+	"uri": "//localhost:1313/6-cleanup/",
+	"title": "Clean up resources",
+	"tags": [],
+	"description": "",
+	"content": "Clean up resources We will proceed to delete the resources in the following order:\nTerminate EC2 Instances Terminate EC2 instance:\nAccess the Amazon EC2 console at EC2. On the left navigation bar, select \u0026ldquo;Instances.\u0026rdquo; Select all EC2 instances related to the lab. Select Instance state. Select Terminate instance. Confirm termination. Terminate DocumentDB Cluster Terminate DocumentDB Cluster\nAccess the Amazon DocumentDB console at EC2. On the left navigation bar, select \u0026ldquo;Cluster.\u0026rdquo; Select docdb-tasktrackr Select Actions Select Delete Confirm delete Delete Load Balencer Delete DocumentDB Cluster\nAccess the Amazon DocumentDB console at EC2. On the navigation pane, choose Load Balancers. Select the LB, and then choose Actions, Delete load balancer. When prompted for confirmation, enter confirm and then choose Delete. Delete S3 Bucket Delete S3 Bucket\nOpen the Amazon S3 console at S3. In the Buckets list, select www.tasktrackr.com, and then choose Delete at the top of the page. On the Delete bucket modal, confirm www.tasktrackr.com, and then choose Delete bucket. Remove NAT Gateway and Elastic IP Address Remove NAT Gateway and Elastic IP Address. AWS charges for wasted EIPs, so you need to double-check to avoid unintended charges. Visit the Amazon VPC console page at VPC. On the left navigation bar, click \u0026ldquo;NAT Gateway.\u0026rdquo; Select NAT Gateway. Click Action. Click Delete NAT Gateway. Type \u0026ldquo;delete.\u0026rdquo; Click Delete to confirm the deletion of NAT Gateway. Delete Elastic IP Address Continue to delete Elastic IP Address. Visit the Amazon VPC console page at VPC. On the left navigation bar, click \u0026ldquo;Elastic IP.\u0026rdquo; Select the Elastic IP Address we created. Click Action. Click Release Elastic IP Address. Click Release. Delete the EC2 Instance connection endpoint Access to Endpoint transactions Select Action, select Delete VPC endpoints Enter delete Delete VPC: Delete VPC MyVPC:\nVisit the Amazon VPC console page at VPC. On the left navigation bar, click Yours VPC Choose My VPC, then click Actions, choose Delete VPC When prompted for confirmation, enter delete and then choose Delete "
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
