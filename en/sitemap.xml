@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/5-creates3host/5.1-createbucket/</loc>
+    <loc>/5-creates3host/5.1-createbucket/</loc>
   </url><url>
-    <loc>//localhost:1313/3-createddbcluster/3.1-createsecuritygroup/</loc>
+    <loc>/3-createddbcluster/3.1-createsecuritygroup/</loc>
   </url><url>
-    <loc>//localhost:1313/4-createec2server/4.1-createsg/</loc>
+    <loc>/4-createec2server/4.1-createsg/</loc>
   </url><url>
-    <loc>//localhost:1313/2-preparation/2.1-createvpc/</loc>
+    <loc>/2-preparation/2.1-createvpc/</loc>
   </url><url>
-    <loc>//localhost:1313/</loc>
+    <loc>/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/"
+                href="/vi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="/"
                 />
   </url><url>
-    <loc>//localhost:1313/1-introduce/</loc>
+    <loc>/1-introduce/</loc>
   </url><url>
-    <loc>//localhost:1313/4-createec2server/4.2-createinstance/</loc>
+    <loc>/4-createec2server/4.2-createinstance/</loc>
   </url><url>
-    <loc>//localhost:1313/2-preparation/2.2-createig/</loc>
+    <loc>/2-preparation/2.2-createig/</loc>
   </url><url>
-    <loc>//localhost:1313/3-createddbcluster/3.2-createsubnetgroup/</loc>
+    <loc>/3-createddbcluster/3.2-createsubnetgroup/</loc>
   </url><url>
-    <loc>//localhost:1313/5-creates3host/5.2-hostwebsite/</loc>
+    <loc>/5-creates3host/5.2-hostwebsite/</loc>
   </url><url>
-    <loc>//localhost:1313/2-preparation/</loc>
+    <loc>/2-preparation/</loc>
   </url><url>
-    <loc>//localhost:1313/3-createddbcluster/3.3-createcluster/</loc>
+    <loc>/3-createddbcluster/3.3-createcluster/</loc>
   </url><url>
-    <loc>//localhost:1313/3-createddbcluster/</loc>
+    <loc>/3-createddbcluster/</loc>
   </url><url>
-    <loc>//localhost:1313/4-createec2server/4.3-createeic/</loc>
+    <loc>/4-createec2server/4.3-createeic/</loc>
   </url><url>
-    <loc>//localhost:1313/2-preparation/2.3-createsubnet/</loc>
+    <loc>/2-preparation/2.3-createsubnet/</loc>
   </url><url>
-    <loc>//localhost:1313/4-createec2server/</loc>
+    <loc>/4-createec2server/</loc>
   </url><url>
-    <loc>//localhost:1313/2-preparation/2.4-createnat/</loc>
+    <loc>/2-preparation/2.4-createnat/</loc>
   </url><url>
-    <loc>//localhost:1313/4-createec2server/4.4-startserver/</loc>
+    <loc>/4-createec2server/4.4-startserver/</loc>
   </url><url>
-    <loc>//localhost:1313/4-createec2server/4.5-createloadbalencer/</loc>
+    <loc>/4-createec2server/4.5-createloadbalencer/</loc>
   </url><url>
-    <loc>//localhost:1313/2-preparation/2.5-createroutetable/</loc>
+    <loc>/2-preparation/2.5-createroutetable/</loc>
   </url><url>
-    <loc>//localhost:1313/5-creates3host/</loc>
+    <loc>/5-creates3host/</loc>
   </url><url>
-    <loc>//localhost:1313/6-cleanup/</loc>
+    <loc>/6-cleanup/</loc>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/categories/"
+                href="/vi/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/categories/"
+                href="/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/tags/"
+                href="/vi/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/tags/"
+                href="/tags/"
                 />
   </url>
 </urlset>
